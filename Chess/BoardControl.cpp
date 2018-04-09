@@ -85,7 +85,23 @@ public:
 						legal_moves.push_back(x * 10 + y + 12);
 			}
 			
+			if (x >= 2) {
+				if (y >= 1)
+					if ((board[x - 2][y - 1] == 0) || ((board[x][y] + board[x - 2][y - 1]) % 2 == 1))
+						legal_moves.push_back(x * 10 + y - 21);
+				if (y <= 6)
+					if ((board[x - 2][y + 1] == 0) || ((board[x][y] + board[x - 2][y + 1]) % 2 == 1))
+						legal_moves.push_back(x * 10 + y - 19);
+			}
 
+			if (x <= 5) {
+				if (y >= 1)
+					if ((board[x + 2][y - 1] == 0) || ((board[x][y] + board[x + 2][y - 1]) % 2 == 1))
+						legal_moves.push_back(x * 10 + y + 19);
+				if (y <= 6)
+					if ((board[x + 2][y + 1] == 0) || ((board[x][y] + board[x + 2][y + 1]) % 2 == 1))
+						legal_moves.push_back(x * 10 + y + 21);							//Knights
+			}
 
 		}
 
