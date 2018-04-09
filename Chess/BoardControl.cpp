@@ -18,10 +18,6 @@ private:
 
 public:
 
-	short getBoard(short x,short y) {
-
-		return board[x][y];
-	}
 
 	vector<short> legalMoves(short piece) {
 		short x = piece / 10;
@@ -89,6 +85,7 @@ public:
 						legal_moves.push_back(x * 10 + y + 12);
 			}
 			
+
 
 		}
 
